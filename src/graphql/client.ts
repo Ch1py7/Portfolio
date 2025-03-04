@@ -6,30 +6,30 @@ import { gql } from 'graphql-tag'
 import { Data } from '../types/Graphql.types'
 
 export const getApiData = async () => {
-  const httpLink = createHttpLink({
-    uri: 'https://api.github.com/graphql',
-  })
+	const httpLink = createHttpLink({
+		uri: 'https://api.github.com/graphql',
+	})
 
-  const authLink = setContext((_, { headers }) => {
-    return {
-      headers: {
-        ...headers,
-        authorization: `Bearer ${import.meta.env.VITE_GITHUB_ACCESS_TOKEN}`,
-      },
-    }
-  })
+	const authLink = setContext((_, { headers }) => {
+		return {
+			headers: {
+				...headers,
+				authorization: `Bearer ${import.meta.env.VITE_GITHUB_ACCESS_TOKEN}`,
+			},
+		}
+	})
 
-  const apolloClient = new ApolloClient({
-    link: authLink.concat(httpLink),
-    cache: new InMemoryCache(),
-  })
+	const apolloClient = new ApolloClient({
+		link: authLink.concat(httpLink),
+		cache: new InMemoryCache(),
+	})
 
-  const apolloProvider = createApolloProvider({
-    defaultClient: apolloClient,
-  })
+	const apolloProvider = createApolloProvider({
+		defaultClient: apolloClient,
+	})
 
-  const { data, loading }: ApolloQueryResult<Data> = await apolloClient.query({
-    query: gql`
+	const { data, loading }: ApolloQueryResult<Data> = await apolloClient.query({
+		query: gql`
       {
         viewer {
           login
@@ -61,7 +61,7 @@ export const getApiData = async () => {
         }
       }
     `,
-  })
+	})
 
-  return { apolloProvider, data, loading }
+	return { apolloProvider, data, loading }
 }

@@ -1,48 +1,48 @@
 export interface GraphqlTypes {
-  data: Data
+	data: Data
 }
 
 export interface Data {
-  user: User
-  viewer: Viewer
+	user: User
+	viewer: Viewer
 }
 
 export interface User {
-  pinnedItems: PinnedItems
+	pinnedItems: PinnedItems
 }
 
 export interface PinnedItems {
-  edges: PinnedItemsEdge[]
-  totalCount: number
+	edges: PinnedItemsEdge[]
+	totalCount: number
 }
 
 export interface PinnedItemsEdge {
-  node: PurpleNode
+	node: PurpleNode
 }
 
 export interface PurpleNode {
-  description: string
-  homepageUrl: string
-  id: string
-  languages: Languages
-  name: string
-  url: string
+	description: string
+	homepageUrl: string
+	id: string
+	languages: Languages
+	name: string
+	url: string
 }
 
 export interface Languages {
-  edges: LanguagesEdge[]
+	edges: LanguagesEdge[]
 }
 
 export interface LanguagesEdge {
-  node: FluffyNode
+	node: FluffyNode
 }
 
 export interface FluffyNode {
-  color: string
-  id: string
-  name: string
+	color: string
+	id: string
+	name: string
 }
 
 export interface Viewer {
-  login: string
+	login: string
 }

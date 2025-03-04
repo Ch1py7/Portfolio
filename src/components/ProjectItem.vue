@@ -58,19 +58,19 @@ import LinkChain from './icons/LinkChain.vue'
 const { isLight } = inject<LightMode>('isLight')!
 
 defineProps<{
-  name: string
-  description: string
-  homepageUrl: string
-  url: string
-  languages: {
-    edges: {
-      node: {
-        name: string
-        color: string
-        id: string
-      }
-    }[]
-  }
+	name: string
+	description: string
+	homepageUrl: string
+	url: string
+	languages: {
+		edges: {
+			node: {
+				name: string
+				color: string
+				id: string
+			}
+		}[]
+	}
 }>()
 </script>
 

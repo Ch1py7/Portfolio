@@ -7,9 +7,8 @@ import SunIcon from './icons/SunIcon.vue'
 const { isLight } = inject<LightMode>('isLight')!
 
 const setLight = () => {
-  isLight.value = !isLight.value
+	isLight.value = !isLight.value
 }
-
 </script>
 
 <template>

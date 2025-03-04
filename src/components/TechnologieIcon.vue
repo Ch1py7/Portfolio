@@ -6,8 +6,8 @@ import TypeScript from './icons/TypeScript.vue'
 import Vue from './icons/VueIcon.vue'
 
 defineProps<{
-  id: string
-  name: string
+	id: string
+	name: string
 }>()
 </script>
 
