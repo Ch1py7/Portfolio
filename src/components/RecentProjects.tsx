@@ -87,7 +87,7 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({
 									{project.languages.nodes.map((tag) => (
 										<span
 											key={tag.id}
-											className='px-3 py-1 text-xs border border-zinc-300 rounded-full duration-100 dark:border-zinc-700 hover:text-white hover:scale-[115%]'
+											className={`px-3 py-1 text-xs border border-zinc-300 rounded-full duration-100 dark:border-zinc-700 ${tag.name !== 'JavaScript' && 'hover:text-white'} hover:scale-[115%]`}
 											onMouseEnter={(e) => handleTechColor(e, tag.color)}
 											onMouseLeave={(e) => handleTechColor(e)}
 										>
@@ -128,14 +128,16 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({
 									whileHover={{ scale: 1.03 }}
 									className='relative aspect-[4/3] overflow-hidden'
 								>
-									<div
-										className={`absolute inset-0 bg-gradient-to-br ${colors[index]} opacity-20 mix-blend-multiply`}
-									/>
-									<img
-										src={project.image}
-										alt={project.name}
-										className='w-full h-full object-contain'
-									/>
+									<a href={project.url} target='_blank' rel='noopener noreferrer'>
+										<div
+											className={`absolute inset-0 bg-gradient-to-br ${colors[index]} opacity-20 mix-blend-multiply`}
+										/>
+										<img
+											src={project.image}
+											alt={project.name}
+											className='w-full h-full object-contain'
+										/>
+									</a>
 								</motion.div>
 							</div>
 						</motion.div>
