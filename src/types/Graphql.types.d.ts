@@ -38,4 +38,3 @@ interface LanguagesNode {
 	id: string
 	name: string
 }
-

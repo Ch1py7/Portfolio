@@ -19,10 +19,10 @@ export const App: React.FC = (): React.ReactNode => {
 	}
 
 	const scrollToSection = (section: string) => {
-    const index = sections.indexOf(section)
-    sectionRefs.current[index]?.scrollIntoView({ behavior: "smooth" })
-    setActiveSection(section)
-  }
+		const index = sections.indexOf(section)
+		sectionRefs.current[index]?.scrollIntoView({ behavior: 'smooth' })
+		setActiveSection(section)
+	}
 
 	useEffect(() => {
 		if (darkMode) {
