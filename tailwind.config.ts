@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export const content: string[] = ['./src/**/*.{html,js,tsx}']
+export const darkMode = ['class']
 export const theme = {
 	extend: {
 		screens: {
@@ -13,4 +14,4 @@ export const theme = {
 		},
 	},
 }
-export const plugins: [] = []
+export const plugins = [require('tailwindcss-animate')]
