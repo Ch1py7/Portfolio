@@ -24,7 +24,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({ handleSection }): React.ReactN
 							<div className='absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-zinc-400 dark:border-zinc-600' />
 							<div className='relative aspect-square overflow-hidden'>
 								<img
-									src='/placeholder.svg?height=600&width=600'
+									src='/images/me.webp'
 									alt='Gerardo Garcia'
 									className='w-full h-full object-cover'
 								/>
