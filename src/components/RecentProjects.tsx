@@ -18,7 +18,7 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({
 	handleSection,
 }): React.ReactNode => {
 	const { data, loading, error } = useGithubQuery<Data>(query)
-	const [projects, setProjects] = useState<ProjectsNode[]>([])
+	const [projects, setProjects] = useState<(ProjectsNode & { image: string })[]>([])
 
 	const handleTechColor = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>, color?: string) => {
 		e.currentTarget.style.backgroundColor = color ? color : 'transparent'
@@ -26,18 +26,26 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({
 
 	useEffect(() => {
 		if (!loading && data) {
-			const projects: ProjectsNode[] = data.user.pinnedItems.edges.map((p) => {
-				return {
-					description: p.node.description,
-					homepageUrl: p.node.homepageUrl,
-					id: p.node.id,
-					languages: p.node.languages,
-					name: p.node.name,
-					createdAt: p.node.createdAt,
-					stargazers: p.node.stargazers,
-					url: p.node.url,
+			const projects: (ProjectsNode & { image: string })[] = data.user.pinnedItems.edges.map(
+				(p) => {
+					let image = ''
+					if (p.node.name === 'afordibot-web') image = '/images/afordibot.webp'
+					if (p.node.name === 'secrets') image = '/images/secrets.webp'
+					if (p.node.name === 'mist-space') image = '/images/mist-space.webp'
+					if (p.node.name === 'Gitlytics') image = '/images/gitlytics.webp'
+					return {
+						description: p.node.description,
+						homepageUrl: p.node.homepageUrl,
+						id: p.node.id,
+						languages: p.node.languages,
+						name: p.node.name,
+						createdAt: p.node.createdAt,
+						stargazers: p.node.stargazers,
+						url: p.node.url,
+						image,
+					}
 				}
-			})
+			)
 			setProjects(projects)
 		}
 	}, [loading, data])
@@ -124,9 +132,9 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({
 										className={`absolute inset-0 bg-gradient-to-br ${colors[index]} opacity-20 mix-blend-multiply`}
 									/>
 									<img
-										src={project.name}
+										src={project.image}
 										alt={project.name}
-										className='w-full h-full object-cover'
+										className='w-full h-full object-contain'
 									/>
 								</motion.div>
 							</div>
