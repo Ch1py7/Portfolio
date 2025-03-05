@@ -40,15 +40,26 @@ export const Contact: React.FC<ContactProps> = ({ handleSection }): React.ReactN
 					<div className='space-y-8'>
 						<div className='text-center'>
 							<h3 className='text-2xl font-bold mb-4'>Download Resume</h3>
-							<motion.a
-								href='/path-to-your-resume.pdf'
-								download='YourName_Resume.pdf'
-								className='inline-flex items-center gap-2 px-6 py-3 bg-zinc-200 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition-colors rounded-lg'
-								whileHover={{ scale: 1.05 }}
-							>
-								<Download className='w-5 h-5' />
-								<span>Download Resume</span>
-							</motion.a>
+							<div className='flex justify-center gap-4'>
+								<motion.a
+									href='/Gerardo-en-CV.pdf'
+									download='Gerardo_Resume_EN.pdf'
+									className='inline-flex items-center gap-2 px-6 py-3 bg-zinc-200 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition-colors rounded-lg'
+									whileHover={{ scale: 1.05 }}
+								>
+									<Download className='w-5 h-5' />
+									<span>English CV</span>
+								</motion.a>
+								<motion.a
+									href='/Gerardo-es-CV.pdf'
+									download='Gerardo_Resume_ES.pdf'
+									className='inline-flex items-center gap-2 px-6 py-3 bg-zinc-200 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition-colors rounded-lg'
+									whileHover={{ scale: 1.05 }}
+								>
+									<Download className='w-5 h-5' />
+									<span>Spanish CV</span>
+								</motion.a>
+							</div>
 						</div>
 
 						<div className='text-center'>
