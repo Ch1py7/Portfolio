@@ -48,12 +48,11 @@ export const Presentation: React.FC<PresentationProps> = ({
 						transition={{ delay: 0.7 }}
 						className='text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-8 leading-none'
 					>
-						Creating digital <br />
+						Building{' '}
 						<span className='text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600 dark:from-indigo-400 dark:to-purple-500'>
-							experiences
+							meaningful
 						</span>{' '}
-						that <br />
-						matter.
+						digital experiences <br /> with purpose.
 					</motion.h1>
 
 					<motion.div
@@ -63,8 +62,9 @@ export const Presentation: React.FC<PresentationProps> = ({
 						className='max-w-2xl'
 					>
 						<p className='text-lg md:text-xl text-zinc-700 dark:text-zinc-300 mb-8'>
-							I build innovative digital solutions that solve real problems. Specializing in
-							creating immersive, accessible, and performant applications.
+							I craft practical digital solutions with a focus on performance, accessibility, and
+							engaging user experiences. My work is about solving real problems, not just following
+							trends.
 						</p>
 
 						<div className='flex flex-wrap gap-4'>

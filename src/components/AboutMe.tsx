@@ -24,14 +24,13 @@ export const AboutMe: React.FC<AboutMeProps> = ({ handleSection }): React.ReactN
 							<div className='absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-zinc-400 dark:border-zinc-600' />
 							<div className='relative aspect-square overflow-hidden'>
 								<img
-									// src='/placeholder.svg?height=600&width=600'
+									src='/placeholder.svg?height=600&width=600'
 									alt='Gerardo Garcia'
 									className='w-full h-full object-cover'
 								/>
 							</div>
 						</div>
 					</motion.div>
-
 					<motion.div
 						initial={{ opacity: 0, x: 40 }}
 						whileInView={{ opacity: 1, x: 0 }}
@@ -42,28 +41,27 @@ export const AboutMe: React.FC<AboutMeProps> = ({ handleSection }): React.ReactN
 							<div className='w-12 h-[1px] bg-zinc-400 dark:bg-zinc-600' />
 							<span className='text-sm uppercase tracking-widest'>About Me</span>
 						</div>
-
 						<h2 className='text-4xl md:text-5xl font-bold tracking-tighter mb-8'>
 							Crafting digital solutions with purpose
 						</h2>
-
 						<div className='space-y-6 text-zinc-700 dark:text-zinc-300'>
 							<p>
-								I'm a fullstack developer and designer with over 7 years of experience creating
-								innovative digital products. My approach combines technical expertise with design
-								thinking to build solutions that are both functional and beautiful.
+								I'm a full-stack developer focused on building high-performance, scalable
+								applications. With experience designing efficient architectures and optimizing
+								frontend performance, I create digital products that are both powerful and
+								user-friendly.
 							</p>
 							<p>
-								I specialize in creating immersive web experiences, real-time applications, and
-								scalable architectures. My work spans across various industries including fintech,
-								healthcare, and creative technologies.
+								I specialize in creating real-time applications, scalable systems, and
+								well-structured APIs. My experience ranges from frontend frameworks like React and
+								Svelte to backend technologies like Node.js, Laravel, and .NET
 							</p>
 							<p>
-								When I'm not coding, you'll find me exploring emerging technologies, contributing to
-								open-source projects, or mentoring aspiring developers.
+								When I'm not coding, I contribute to open-source projects, participate in tech
+								discussions, and explore emerging technologies (or sometimes, I just enjoy a good
+								gaming session).
 							</p>
 						</div>
-
 						<div className='mt-10 grid grid-cols-2 gap-8'>
 							<div>
 								<h3 className='text-lg font-bold mb-4'>Technologies</h3>
@@ -74,11 +72,11 @@ export const AboutMe: React.FC<AboutMeProps> = ({ handleSection }): React.ReactN
 									</li>
 									<li className='flex items-center gap-2'>
 										<span className='w-1 h-1 bg-indigo-500 rounded-full' />
-										React / Next.js
+										React / Svelte
 									</li>
 									<li className='flex items-center gap-2'>
 										<span className='w-1 h-1 bg-indigo-500 rounded-full' />
-										Node.js / Express
+										Node.js / Express / Laravel / .NET
 									</li>
 									<li className='flex items-center gap-2'>
 										<span className='w-1 h-1 bg-indigo-500 rounded-full' />
@@ -86,11 +84,14 @@ export const AboutMe: React.FC<AboutMeProps> = ({ handleSection }): React.ReactN
 									</li>
 									<li className='flex items-center gap-2'>
 										<span className='w-1 h-1 bg-indigo-500 rounded-full' />
-										MongoDB / PostgreSQL
+										MongoDB / PostgreSQL / MySQL
+									</li>
+									<li className='flex items-center gap-2'>
+										<span className='w-1 h-1 bg-indigo-500 rounded-full' />
+										Tailwind CSS / Bootstrap
 									</li>
 								</ul>
 							</div>
-
 							<div>
 								<h3 className='text-lg font-bold mb-4'>Services</h3>
 								<ul className='space-y-2 text-zinc-700 dark:text-zinc-300'>
@@ -100,19 +101,19 @@ export const AboutMe: React.FC<AboutMeProps> = ({ handleSection }): React.ReactN
 									</li>
 									<li className='flex items-center gap-2'>
 										<span className='w-1 h-1 bg-indigo-500 rounded-full' />
-										UI/UX Design
+										Scalable UI Development
 									</li>
 									<li className='flex items-center gap-2'>
 										<span className='w-1 h-1 bg-indigo-500 rounded-full' />
-										API Development
+										API Development & Integration
 									</li>
 									<li className='flex items-center gap-2'>
 										<span className='w-1 h-1 bg-indigo-500 rounded-full' />
-										Technical Consulting
+										Architecture & Performance Consulting
 									</li>
 									<li className='flex items-center gap-2'>
 										<span className='w-1 h-1 bg-indigo-500 rounded-full' />
-										Code Reviews
+										Code Reviews & Best Practices
 									</li>
 								</ul>
 							</div>
