@@ -1,48 +1,41 @@
-export interface GraphqlTypes {
+interface GraphqlTypes {
 	data: Data
 }
 
-export interface Data {
+interface Data {
 	user: User
-	viewer: Viewer
 }
 
-export interface User {
+interface User {
 	pinnedItems: PinnedItems
 }
 
-export interface PinnedItems {
-	edges: PinnedItemsEdge[]
-	totalCount: number
+interface PinnedItems {
+	edges: PinnedItemsNode[]
 }
 
-export interface PinnedItemsEdge {
-	node: PurpleNode
+interface PinnedItemsNode {
+	node: ProjectsNode
 }
 
-export interface PurpleNode {
-	description: string
-	homepageUrl: string
+interface ProjectsNode {
 	id: string
-	languages: Languages
 	name: string
 	url: string
+	description: string
+	createdAt: string
+	homepageUrl: string
+	stargazers: { totalCount: number }
+	languages: Languages
 }
 
-export interface Languages {
-	edges: LanguagesEdge[]
+interface Languages {
+	nodes: LanguagesNode[]
 }
 
-export interface LanguagesEdge {
-	node: FluffyNode
-}
-
-export interface FluffyNode {
+interface LanguagesNode {
 	color: string
 	id: string
 	name: string
 }
 
-export interface Viewer {
-	login: string
-}
