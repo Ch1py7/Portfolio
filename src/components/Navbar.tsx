@@ -27,7 +27,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 				animate={{ y: 0 }}
 				transition={{ delay: 0.2 }}
 			>
-				<div className='mx-auto px-6 py-6 flex justify-between items-center'>
+				<div className='max-w-7xl mx-auto px-6 py-6 flex justify-between items-center'>
 					<motion.button
 						onClick={() => scrollToSection('home')}
 						className='text-white text-xl font-bold tracking-tighter'

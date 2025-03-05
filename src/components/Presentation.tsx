@@ -29,7 +29,7 @@ export const Presentation: React.FC<PresentationProps> = ({
 				/>
 			</div>
 
-			<div className='mx-auto px-6 py-20 relative z-10'>
+			<div className='max-w-7xl mx-auto px-6 py-20 relative z-10'>
 				<div className='max-w-5xl mx-auto'>
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}

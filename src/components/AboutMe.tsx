@@ -11,7 +11,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({ handleSection }): React.ReactN
 			id='about'
 			className='py-20 md:py-32 bg-zinc-200 dark:bg-zinc-800'
 		>
-			<div className='mx-auto px-6'>
+			<div className='max-w-7xl mx-auto px-6'>
 				<div className='grid md:grid-cols-[1fr_1.5fr] gap-12 md:gap-20 items-center'>
 					<motion.div
 						initial={{ opacity: 0, x: -40 }}
