@@ -4,24 +4,33 @@ export const query = gql`
 query GetApiData {
   user(login: "Ch1py7") {
     pinnedItems(first: 6) {
-      totalCount
       edges {
         node {
           ... on Repository {
             id
             name
             url
-            languages(first: 10) {
-              edges {
-                node {
+            description
+            createdAt
+            homepageUrl
+            stargazers {
+              totalCount
+            }
+            repositoryTopics(first: 10) {
+              nodes {
+                topic {
                   id
                   name
-                  color
                 }
               }
             }
-            description
-            homepageUrl
+            languages(first: 10) {
+              nodes {
+                id
+                name
+                color
+              }
+            }
           }
         }
       }
