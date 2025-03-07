@@ -32,7 +32,7 @@ export const App: React.FC = (): React.ReactNode => {
 		}
 	}, [darkMode])
 	return (
-		<div className='relative bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 min-h-screen font-[Satoshi]'>
+		<div className='relative bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 min-h-screen font-[Satoshi] overflow-x-hidden'>
 			<Navbar
 				activeSection={activeSection}
 				darkMode={darkMode}
