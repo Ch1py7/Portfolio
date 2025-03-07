@@ -4,7 +4,7 @@ import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
 import { Navbar } from './components/Navbar'
 import { Presentation } from './components/Presentation'
-import { RecentProjects } from './components/RecentProjects'
+import { RecentProjects } from './components/Projects'
 
 const sections = ['home', 'work', 'about', 'contact']
 

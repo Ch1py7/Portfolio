@@ -14,6 +14,10 @@ interface RecentProjectsProps {
 	handleSection: (el: HTMLElement | null, index: number) => void
 }
 
+const firstLetterCapitalize = (word: string) => {
+	return word.charAt(0).toUpperCase() + word.slice(1)
+}
+
 export const RecentProjects: React.FC<RecentProjectsProps> = ({
 	handleSection,
 }): React.ReactNode => {
@@ -25,16 +29,16 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({
 			const projects: (ProjectsNode & { image: string })[] = data.user.pinnedItems.edges.map(
 				(p) => {
 					let image = ''
-					if (p.node.name === 'afordibot-web') image = '/images/afordibot.webp'
-					if (p.node.name === 'secrets') image = '/images/secrets.webp'
-					if (p.node.name === 'mist-space') image = '/images/mist-space.webp'
-					if (p.node.name === 'Gitlytics') image = '/images/gitlytics.webp'
+					if (p.node.name.toLowerCase() === 'afordibot-web') image = '/images/afordibot.webp'
+					if (p.node.name.toLowerCase() === 'whisper') image = '/images/secrets.webp'
+					if (p.node.name.toLowerCase() === 'mist-space') image = '/images/mist-space.webp'
+					if (p.node.name.toLowerCase() === 'gitlytics') image = '/images/gitlytics.webp'
 					return {
 						description: p.node.description,
 						homepageUrl: p.node.homepageUrl,
 						id: p.node.id,
 						languages: p.node.languages,
-						name: p.node.name,
+						name: p.node.name === 'afordibot-web' ? 'afordibot' : p.node.name,
 						createdAt: p.node.createdAt,
 						stargazers: p.node.stargazers,
 						url: p.node.url,
@@ -78,7 +82,9 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({
 								<div className='mb-4 text-sm text-zinc-500 dark:text-zinc-400'>
 									{new Date(project.createdAt).getFullYear()}
 								</div>
-								<h3 className='text-3xl font-bold mb-4 tracking-tight'>{project.name}</h3>
+								<h3 className='text-3xl font-bold mb-4 tracking-tight'>
+									{firstLetterCapitalize(project.name)}
+								</h3>
 								<p className='text-zinc-700 dark:text-zinc-300 mb-6'>{project.description}</p>
 								<div className='flex flex-wrap gap-2 mb-8'>
 									{project.repositoryTopics.nodes.map(({ topic }) => (
