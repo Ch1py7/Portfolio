@@ -22,7 +22,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 	return (
 		<>
 			<motion.nav
-				className='fixed top-0 left-0 w-full z-40 mix-blend-difference'
+				className='fixed top-0 left-0 w-full z-40  bg-zinc-100'
 				initial={{ y: -100 }}
 				animate={{ y: 0 }}
 				transition={{ delay: 0.2 }}
@@ -30,7 +30,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 				<div className='max-w-7xl mx-auto px-6 py-6 flex justify-between items-center'>
 					<motion.button
 						onClick={() => scrollToSection('home')}
-						className='text-white text-xl font-bold tracking-tighter'
+						className='text-black text-xl font-bold tracking-tighter'
 						whileHover={{ scale: 1.05 }}
 					>
 						Gerardo Garcia
@@ -41,7 +41,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 							<motion.button
 								key={section}
 								onClick={() => scrollToSection(section)}
-								className={`text-white uppercase text-sm tracking-widest ${
+								className={`text-black uppercase text-sm tracking-widest ${
 									activeSection === section ? 'opacity-100' : 'opacity-50 hover:opacity-100'
 								}`}
 								whileHover={{ y: -2 }}
@@ -52,7 +52,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
 						<motion.button
 							onClick={() => setDarkMode(!darkMode)}
-							className='text-white ml-4'
+							className='text-black ml-4'
 							whileHover={{ rotate: 180 }}
 							transition={{ duration: 0.3 }}
 						>
@@ -62,7 +62,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
 					<motion.button
 						onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-						className='text-white md:hidden'
+						className='text-black md:hidden'
 						whileTap={{ scale: 0.9 }}
 					>
 						{mobileMenuOpen ? <X className='w-6 h-6' /> : <Menu className='w-6 h-6' />}

@@ -48,13 +48,15 @@ export const AboutMe: React.FC<AboutMeProps> = ({ handleSection }): React.ReactN
 							<p>
 								I'm a full-stack developer focused on building high-performance, scalable
 								applications. With experience designing efficient architectures and optimizing
-								frontend performance, I create digital products that are both powerful and
-								user-friendly.
+								frontend performance.
 							</p>
 							<p>
-								I specialize in creating real-time applications, scalable systems, and
-								well-structured APIs. My experience ranges from frontend frameworks like React and
-								Svelte to backend technologies like Node.js, Laravel, and .NET
+								I achieved up to a 30% increase in the overall performance of Svelte applications by
+								implementing custom hooks and reducing reactive dependencies in the user interface.
+							</p>
+							<p>
+								I designed a custom function for uploading files to the cloud in Azure Storage,
+								optimizing the process and enhancing the user experience.
 							</p>
 							<p>
 								When I'm not coding, I contribute to open-source projects, participate in tech

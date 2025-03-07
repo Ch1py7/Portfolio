@@ -28,33 +28,35 @@ export const Presentation: React.FC<PresentationProps> = ({
 					}}
 				/>
 			</div>
-
 			<div className='max-w-7xl mx-auto px-6 py-20 relative z-10'>
 				<div className='max-w-5xl mx-auto'>
-					<motion.div
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ delay: 0.5 }}
-						className='mb-8'
-					>
-						<div className='inline-block px-3 py-1 mb-6 border border-zinc-400 dark:border-zinc-600 text-xs uppercase tracking-widest'>
-							Fullstack Developer
-						</div>
-					</motion.div>
-
 					<motion.h1
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
-						transition={{ delay: 0.7 }}
+						transition={{ delay: 0.5 }}
 						className='text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-8 leading-none'
 					>
-						Building{' '}
-						<span className='text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600 dark:from-indigo-400 dark:to-purple-500'>
-							meaningful
-						</span>{' '}
-						digital experiences <br /> with purpose.
+						Fullstack Developer
 					</motion.h1>
-
+					<motion.div
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ delay: 0.7 }}
+						className='mb-8 flex space-x-2'
+					>
+						<div className='inline-block px-3 py-1 mb-6 border border-zinc-400 dark:border-zinc-600 text-xs uppercase tracking-widest'>
+							React
+						</div>
+						<div className='inline-block px-3 py-1 mb-6 border border-zinc-400 dark:border-zinc-600 text-xs uppercase tracking-widest'>
+							TypeScript
+						</div>
+						<div className='inline-block px-3 py-1 mb-6 border border-zinc-400 dark:border-zinc-600 text-xs uppercase tracking-widest'>
+							.NET
+						</div>
+						<div className='inline-block px-3 py-1 mb-6 border border-zinc-400 dark:border-zinc-600 text-xs uppercase tracking-widest'>
+							Node
+						</div>
+					</motion.div>
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
@@ -66,11 +68,10 @@ export const Presentation: React.FC<PresentationProps> = ({
 							engaging user experiences. My work is about solving real problems, not just following
 							trends.
 						</p>
-
 						<div className='flex flex-wrap gap-4'>
 							<motion.button
 								onClick={() => scrollToSection('work')}
-								className='group relative px-6 py-3 overflow-hidden'
+								className='group relative px-6 py-3 overflow-hidden cursor-pointer'
 								whileHover={{ scale: 1.02 }}
 							>
 								<span className='absolute inset-0 w-full h-full bg-gradient-to-r from-indigo-500 to-purple-600' />
@@ -79,7 +80,6 @@ export const Presentation: React.FC<PresentationProps> = ({
 									View Projects
 								</span>
 							</motion.button>
-
 							<motion.a
 								href='mailto:garcialopezgerardo6612@gmail.com'
 								className='group relative px-6 py-3 overflow-hidden'
@@ -93,7 +93,6 @@ export const Presentation: React.FC<PresentationProps> = ({
 					</motion.div>
 				</div>
 			</div>
-
 			<motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}

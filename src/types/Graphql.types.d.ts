@@ -26,7 +26,14 @@ interface ProjectsNode {
 	createdAt: string
 	homepageUrl: string
 	stargazers: { totalCount: number }
+	repositoryTopics: Topics
 	languages: Languages
+}
+
+interface Topics {
+	nodes: {
+		topic: { id: string; name: string }
+	}[]
 }
 
 interface Languages {
