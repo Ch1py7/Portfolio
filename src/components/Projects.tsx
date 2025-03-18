@@ -4,10 +4,10 @@ import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
 const colors = [
-	'from-violet-500 to-purple-700',
-	'from-emerald-500 to-teal-700',
-	'from-amber-500 to-orange-700',
-	'from-blue-500 to-indigo-700',
+	'from-violet-500 to-purple-700 dark:from-black dark:to-black',
+	'from-emerald-500 to-teal-700 dark:from-black dark:to-black',
+	'from-amber-500 to-orange-700 dark:from-black dark:to-black',
+	'from-blue-500 to-indigo-700 dark:from-black dark:to-black',
 ]
 
 interface RecentProjectsProps {
@@ -31,7 +31,7 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({
 					let image = ''
 					if (p.node.name.toLowerCase() === 'afordibot-web') image = '/images/afordibot.webp'
 					if (p.node.name.toLowerCase() === 'whisper') image = '/images/secrets.webp'
-					if (p.node.name.toLowerCase() === 'mist-space') image = '/images/mist-space.webp'
+					if (p.node.name.toLowerCase() === 'ambient-space') image = '/images/mist-space.webp'
 					if (p.node.name.toLowerCase() === 'gitlytics') image = '/images/gitlytics.webp'
 					return {
 						description: p.node.description,
@@ -131,12 +131,12 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({
 								>
 									<a href={project.homepageUrl} target='_blank' rel='noopener noreferrer'>
 										<div
-											className={`absolute inset-0 bg-gradient-to-br ${colors[index]} opacity-20 mix-blend-multiply`}
+											className={`absolute inset-0 bg-gradient-to-br ${colors[index]} opacity-15`}
 										/>
 										<img
 											src={project.image}
 											alt={project.name}
-											className='w-full h-full object-contain'
+											className='w-full relative z-10 h-full object-contain'
 										/>
 									</a>
 								</motion.div>

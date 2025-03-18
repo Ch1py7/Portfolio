@@ -1,6 +1,47 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+@utilies {
+	@theme {
+		--animate-upDown: upDown 1s ease-in infinite;
+		@keyframes upDown {
+			0% {
+				transform: translate(0, 0px);
+			}
+			50% {
+				transform: translate(0, 10px);
+			}
+			100% {
+				transform: translate(0, 0px);
+			}
+		}
+	
+		--animate-upDownSlower: upDownSlower 1s ease-in infinite;
+		@keyframes upDownSlower {
+			0% {
+				transform: translate(0, 0px);
+			}
+			50% {
+				transform: translate(0, 10px);
+			}
+			100% {
+				transform: translate(0, 0px);
+			}
+		}
+	
+		--animate-appear: appear 2s ease-in;
+		@keyframes appear {
+			0%,
+			45% {
+				opacity: 0;
+			}
+			80% {
+				opacity: 1;
+			}
+		}
+	}
+}
+
 @font-face {
 	font-family: "Satoshi";
 	src: url("/fonts/Satoshi-Light.otf") format("opentype");

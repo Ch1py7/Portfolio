@@ -22,26 +22,35 @@ export const Navbar: React.FC<NavbarProps> = ({
 	return (
 		<>
 			<motion.nav
-				className='fixed top-0 left-0 w-full z-40  bg-zinc-100'
+				className='fixed top-0 left-0 w-full z-40 bg-zinc-100 bg-gradient-to-r dark:from-zinc-900 dark:to-zinc-800'
 				initial={{ y: -100 }}
 				animate={{ y: 0 }}
 				transition={{ delay: 0.2 }}
 			>
 				<div className='max-w-7xl mx-auto px-6 py-6 flex justify-between items-center'>
-					<motion.button
-						onClick={() => scrollToSection('home')}
-						className='text-black text-xl font-bold tracking-tighter'
-						whileHover={{ scale: 1.05 }}
-					>
-						Gerardo Garcia
-					</motion.button>
+					<div className='flex space-x-10'>
+						<motion.button
+							onClick={() => scrollToSection('home')}
+							className='text-zinc-900 dark:text-zinc-100 text-xl font-bold tracking-tighter'
+							whileHover={{ scale: 1.05 }}
+						>
+							Gerardo Garcia
+						</motion.button>
+						{/* todo: add insights tab */}
+						{/* <motion.button
+							className='text-zinc-900 dark:text-zinc-100 text-xl font-bold tracking-tighter'
+							whileHover={{ scale: 1.05 }}
+						>
+							Insights
+						</motion.button> */}
+					</div>
 
 					<div className='hidden md:flex items-center gap-8'>
 						{sections.map((section) => (
 							<motion.button
 								key={section}
 								onClick={() => scrollToSection(section)}
-								className={`text-black uppercase text-sm tracking-widest ${
+								className={`text-zinc-900 dark:text-zinc-100 uppercase text-sm tracking-widest cursor-pointer ${
 									activeSection === section ? 'opacity-100' : 'opacity-50 hover:opacity-100'
 								}`}
 								whileHover={{ y: -2 }}
@@ -52,7 +61,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
 						<motion.button
 							onClick={() => setDarkMode(!darkMode)}
-							className='text-black ml-4'
+							className='text-zinc-900 dark:text-zinc-100 ml-4 cursor-pointer hover:bg-gray-300/50 dark:hover:bg-gray-300/10 rounded-full p-2'
 							whileHover={{ rotate: 180 }}
 							transition={{ duration: 0.3 }}
 						>
