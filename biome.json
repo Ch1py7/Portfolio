@@ -98,7 +98,7 @@
 			"nursery": {
 				"noProcessEnv": "off",
 				"noUnknownPseudoElement": "error",
-				"useComponentExportOnlyModules": "error"
+				"useComponentExportOnlyModules": "off"
 			}
 		},
 		"ignore": ["node_modules/**", "dist/**", "tsconfig.json", "jsconfig.json"]

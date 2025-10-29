@@ -31,7 +31,7 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({
 					className='mb-6 md:mb-16'
 				>
 					<div className='flex items-center gap-4 mb-6'>
-						<div className='w-12 h-px bg-zinc-400' />
+						<div className='w-12 h-px bg-zinc-400 dark:bg-zinc-600' />
 						<span className='text-sm uppercase tracking-widest'>Selected Work</span>
 					</div>
 					<h2 className='text-4xl md:text-5xl font-bold tracking-tighter'>Projects</h2>
@@ -70,12 +70,12 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({
 								<h3 className='text-3xl font-bold mb-4 tracking-tight'>
 									{firstLetterCapitalize(project.name)}
 								</h3>
-								<p className='text-zinc-700 mb-6'>{project.description}</p>
+								<p className='opacity-70 mb-6'>{project.description}</p>
 								<div className='flex flex-wrap gap-2 mb-8'>
 									{project.languages.map((language) => (
 										<span
 											key={language}
-											className='px-4 py-2 text-xs bg-white/50 backdrop-blur-sm border border-zinc-300/50 rounded-full duration-100 font-medium'
+											className='px-4 py-2 text-xs bg-white/50 dark:bg-zinc-800/50 backdrop-blur-sm border border-zinc-300/50 dark:border-zinc-600/50 rounded-full duration-100 font-medium'
 										>
 											{language}
 										</span>
