@@ -1,10 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { Menu, Moon, Sun, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 
 interface NavbarProps {
-	darkMode: boolean
-	setDarkMode: React.Dispatch<React.SetStateAction<boolean>>
 	scrollToSection: (section: string) => void
 	activeSection: string
 }
@@ -12,8 +10,6 @@ interface NavbarProps {
 const sections = ['home', 'work', 'about', 'contact']
 
 export const Navbar: React.FC<NavbarProps> = ({
-	darkMode,
-	setDarkMode,
 	scrollToSection,
 	activeSection,
 }): React.ReactNode => {
@@ -22,7 +18,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 	return (
 		<>
 			<motion.nav
-				className='fixed top-0 left-0 w-full z-40 bg-zinc-100 bg-gradient-to-r dark:from-zinc-900 dark:to-zinc-800'
+				className='fixed top-0 left-0 w-full z-40 bg-zinc-100'
 				initial={{ y: -100 }}
 				animate={{ y: 0 }}
 				transition={{ delay: 0.2 }}
@@ -31,14 +27,14 @@ export const Navbar: React.FC<NavbarProps> = ({
 					<div className='flex space-x-10'>
 						<motion.button
 							onClick={() => scrollToSection('home')}
-							className='text-zinc-900 dark:text-zinc-100 text-xl font-bold tracking-tighter'
+							className='text-zinc-900 text-xl font-bold tracking-tighter'
 							whileHover={{ scale: 1.05 }}
 						>
 							Gerardo Garcia
 						</motion.button>
 						{/* todo: add insights tab */}
 						{/* <motion.button
-							className='text-zinc-900 dark:text-zinc-100 text-xl font-bold tracking-tighter'
+							className='text-zinc-900 text-xl font-bold tracking-tighter'
 							whileHover={{ scale: 1.05 }}
 						>
 							Insights
@@ -50,7 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 							<motion.button
 								key={section}
 								onClick={() => scrollToSection(section)}
-								className={`text-zinc-900 dark:text-zinc-100 uppercase text-sm tracking-widest cursor-pointer ${
+								className={`text-zinc-900 uppercase text-sm tracking-widest cursor-pointer ${
 									activeSection === section ? 'opacity-100' : 'opacity-50 hover:opacity-100'
 								}`}
 								whileHover={{ y: -2 }}
@@ -58,15 +54,6 @@ export const Navbar: React.FC<NavbarProps> = ({
 								{section}
 							</motion.button>
 						))}
-
-						<motion.button
-							onClick={() => setDarkMode(!darkMode)}
-							className='text-zinc-900 dark:text-zinc-100 ml-4 cursor-pointer hover:bg-gray-300/50 dark:hover:bg-gray-300/10 rounded-full p-2'
-							whileHover={{ rotate: 180 }}
-							transition={{ duration: 0.3 }}
-						>
-							{darkMode ? <Sun className='w-5 h-5' /> : <Moon className='w-5 h-5' />}
-						</motion.button>
 					</div>
 
 					<motion.button
@@ -84,14 +71,14 @@ export const Navbar: React.FC<NavbarProps> = ({
 						initial={{ opacity: 0, y: -20 }}
 						animate={{ opacity: 1, y: 0 }}
 						exit={{ opacity: 0, y: -20 }}
-						className='fixed inset-0 z-30 bg-zinc-100 dark:bg-zinc-900 bg-opacity-95 flex flex-col items-center justify-center'
+						className='fixed inset-0 z-30 bg-zinc-100 bg-opacity-95 flex flex-col items-center justify-center'
 					>
 						<div className='flex flex-col items-center gap-8'>
 							{sections.map((section) => (
 								<motion.button
 									key={section}
 									onClick={() => scrollToSection(section)}
-									className={`text-zinc-900 dark:text-zinc-100 uppercase text-2xl tracking-widest ${
+									className={`text-zinc-900 uppercase text-2xl tracking-widest ${
 										activeSection === section ? 'opacity-100' : 'opacity-50'
 									}`}
 									whileHover={{ scale: 1.1 }}
@@ -99,15 +86,6 @@ export const Navbar: React.FC<NavbarProps> = ({
 									{section}
 								</motion.button>
 							))}
-
-							<motion.button
-								onClick={() => setDarkMode(!darkMode)}
-								className='text-zinc-900 dark:text-zinc-100 mt-8'
-								whileHover={{ rotate: 180 }}
-								transition={{ duration: 0.3 }}
-							>
-								{darkMode ? <Sun className='w-6 h-6' /> : <Moon className='w-6 h-6' />}
-							</motion.button>
 						</div>
 					</motion.div>
 				)}

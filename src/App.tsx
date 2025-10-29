@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { AboutMe } from './components/AboutMe'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
@@ -9,7 +9,6 @@ import { RecentProjects } from './components/Projects'
 const sections = ['home', 'work', 'about', 'contact']
 
 export const App: React.FC = (): React.ReactNode => {
-	const [darkMode, setDarkMode] = useState(false)
 	const [activeSection, setActiveSection] = useState('home')
 
 	const sectionRefs = useRef<(HTMLElement | null)[]>([])
@@ -24,21 +23,9 @@ export const App: React.FC = (): React.ReactNode => {
 		setActiveSection(section)
 	}
 
-	useEffect(() => {
-		if (darkMode) {
-			document.documentElement.classList.add('dark')
-		} else {
-			document.documentElement.classList.remove('dark')
-		}
-	}, [darkMode])
 	return (
-		<div className='relative bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 min-h-screen font-[Satoshi] overflow-x-hidden'>
-			<Navbar
-				activeSection={activeSection}
-				darkMode={darkMode}
-				scrollToSection={scrollToSection}
-				setDarkMode={setDarkMode}
-			/>
+		<div className='relative bg-zinc-100 text-zinc-900 min-h-screen font-[Satoshi] overflow-x-hidden'>
+			<Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
 			<Presentation handleSection={handleSection} scrollToSection={scrollToSection} />
 			<RecentProjects handleSection={handleSection} />
 			<AboutMe handleSection={handleSection} />

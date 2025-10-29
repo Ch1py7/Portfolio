@@ -9,10 +9,14 @@ export const AboutMe: React.FC<AboutMeProps> = ({ handleSection }): React.ReactN
 		<section
 			ref={(el) => handleSection(el, 2)}
 			id='about'
-			className='py-20 md:py-32 bg-zinc-200 dark:bg-zinc-800'
+			className='py-20 md:py-32 bg-linear-to-br from-zinc-200 via-zinc-100 to-zinc-200'
 		>
 			<div className='max-w-7xl mx-auto px-6'>
 				<div className='grid md:grid-cols-[1fr_1.5fr] gap-12 md:gap-20 items-center'>
+				<div className='flex items-center gap-4 mb-6 md:hidden'>
+							<div className='w-12 h-px bg-zinc-400' />
+							<span className='text-sm uppercase tracking-widest'>About Me</span>
+						</div>
 					<motion.div
 						initial={{ opacity: 0, x: -40 }}
 						whileInView={{ opacity: 1, x: 0 }}
@@ -20,9 +24,9 @@ export const AboutMe: React.FC<AboutMeProps> = ({ handleSection }): React.ReactN
 						transition={{ duration: 0.5 }}
 					>
 						<div className='relative'>
-							<div className='absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-zinc-400 dark:border-zinc-600' />
-							<div className='absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-zinc-400 dark:border-zinc-600' />
-							<div className='relative aspect-square overflow-hidden'>
+							<div className='absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-zinc-400 rounded-tl-2xl' />
+							<div className='absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-zinc-400 rounded-br-2xl' />
+							<div className='relative aspect-square overflow-hidden rounded-2xl shadow-lg'>
 								<img
 									src='/images/me.webp'
 									alt='Gerardo Garcia'
@@ -37,14 +41,14 @@ export const AboutMe: React.FC<AboutMeProps> = ({ handleSection }): React.ReactN
 						viewport={{ once: true, margin: '-100px' }}
 						transition={{ duration: 0.5 }}
 					>
-						<div className='flex items-center gap-4 mb-6'>
-							<div className='w-12 h-[1px] bg-zinc-400 dark:bg-zinc-600' />
+						<div className='hidden items-center gap-4 mb-6 md:flex'>
+							<div className='w-12 h-px bg-zinc-400' />
 							<span className='text-sm uppercase tracking-widest'>About Me</span>
 						</div>
 						<h2 className='text-4xl md:text-5xl font-bold tracking-tighter mb-8'>
 							Crafting digital solutions with purpose
 						</h2>
-						<div className='space-y-6 text-zinc-700 dark:text-zinc-300'>
+						<div className='space-y-6 text-zinc-700'>
 							<p>
 								I'm a full-stack developer focused on building high-performance, scalable
 								applications. With experience designing efficient architectures and optimizing
@@ -67,7 +71,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({ handleSection }): React.ReactN
 						<div className='mt-10 grid grid-cols-2 gap-8'>
 							<div>
 								<h3 className='text-lg font-bold mb-4'>Technologies</h3>
-								<ul className='space-y-2 text-zinc-700 dark:text-zinc-300'>
+								<ul className='space-y-2 text-zinc-700'>
 									<li className='flex items-center gap-2'>
 										<span className='w-1 h-1 bg-indigo-500 rounded-full' />
 										TypeScript / JavaScript
@@ -96,7 +100,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({ handleSection }): React.ReactN
 							</div>
 							<div>
 								<h3 className='text-lg font-bold mb-4'>Services</h3>
-								<ul className='space-y-2 text-zinc-700 dark:text-zinc-300'>
+								<ul className='space-y-2 text-zinc-700'>
 									<li className='flex items-center gap-2'>
 										<span className='w-1 h-1 bg-indigo-500 rounded-full' />
 										Web Development

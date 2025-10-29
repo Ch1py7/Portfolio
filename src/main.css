@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
 
 @utilies {
 	@theme {
@@ -15,7 +14,7 @@
 				transform: translate(0, 0px);
 			}
 		}
-	
+
 		--animate-upDownSlower: upDownSlower 1s ease-in infinite;
 		@keyframes upDownSlower {
 			0% {
@@ -28,7 +27,7 @@
 				transform: translate(0, 0px);
 			}
 		}
-	
+
 		--animate-appear: appear 2s ease-in;
 		@keyframes appear {
 			0%,
