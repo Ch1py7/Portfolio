@@ -20,7 +20,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 	return (
 		<>
 			<motion.nav
-				className='fixed top-0 left-0 w-full z-40'
+				className='fixed inset-x-0 top-0 z-40 backdrop-blur-[10px]'
 				initial={{ y: -100 }}
 				animate={{ y: 0 }}
 				transition={{ delay: 0.2 }}
