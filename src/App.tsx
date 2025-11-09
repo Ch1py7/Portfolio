@@ -4,10 +4,11 @@ import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
 import { Navbar } from './components/Navbar'
 import { Presentation } from './components/Presentation'
-import { RecentProjects } from './components/Projects'
+import { Projects } from './components/Projects'
+import { Work } from './components/Work'
 import { ThemeProvider, useTheme } from './contexts/ThemeContext'
 
-const sections = ['home', 'work', 'about', 'contact']
+const sections = ['home', 'experience', 'projects', 'about', 'contact']
 
 const CanvasAnimation = () => {
 	const { circleCoordinates, isAnimating, willBeDark, isDark } = useTheme()
@@ -141,7 +142,8 @@ export const App: React.FC = (): React.ReactNode => {
 				<div className='relative z-10'>
 					<Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
 					<Presentation handleSection={handleSection} scrollToSection={scrollToSection} />
-					<RecentProjects handleSection={handleSection} />
+					<Work handleSection={handleSection} />
+					<Projects handleSection={handleSection} />
 					<AboutMe handleSection={handleSection} />
 					<Contact handleSection={handleSection} />
 					<Footer />

@@ -8,7 +8,7 @@ interface NavbarProps {
 	activeSection: string
 }
 
-const sections = ['home', 'work', 'about', 'contact']
+const sections = ['home', 'experience', 'projects', 'about', 'contact']
 
 export const Navbar: React.FC<NavbarProps> = ({
 	scrollToSection,

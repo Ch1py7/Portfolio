@@ -7,7 +7,7 @@ interface ContactProps {
 
 export const Contact: React.FC<ContactProps> = ({ handleSection }): React.ReactNode => {
 	return (
-		<section ref={(el) => handleSection(el, 3)} id='contact' className='py-20 md:py-32'>
+		<section ref={(el) => handleSection(el, 4)} id='contact' className='py-20 md:py-32'>
 			<div className='max-w-7xl mx-auto px-6'>
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}

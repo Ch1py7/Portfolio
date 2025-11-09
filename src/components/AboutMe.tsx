@@ -7,7 +7,7 @@ interface AboutMeProps {
 export const AboutMe: React.FC<AboutMeProps> = ({ handleSection }): React.ReactNode => {
 	return (
 		<section
-			ref={(el) => handleSection(el, 2)}
+			ref={(el) => handleSection(el, 3)}
 			id='about'
 			className='py-20 md:py-32'
 		>

@@ -9,7 +9,7 @@ const colors = [
 	'from-blue-500 to-indigo-700',
 ]
 
-interface RecentProjectsProps {
+interface ProjectsProps {
 	handleSection: (el: HTMLElement | null, index: number) => void
 }
 
@@ -17,11 +17,9 @@ const firstLetterCapitalize = (word: string) => {
 	return word.charAt(0).toUpperCase() + word.slice(1)
 }
 
-export const RecentProjects: React.FC<RecentProjectsProps> = ({
-	handleSection,
-}): React.ReactNode => {
+export const Projects: React.FC<ProjectsProps> = ({ handleSection }): React.ReactNode => {
 	return (
-		<section ref={(el) => handleSection(el, 1)} id='work' className='py-20 md:py-32'>
+		<section ref={(el) => handleSection(el, 2)} id='projects' className='py-20 md:py-32'>
 			<div className='max-w-7xl mx-auto px-6'>
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -30,10 +28,6 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({
 					transition={{ duration: 0.5 }}
 					className='mb-6 md:mb-16'
 				>
-					<div className='flex items-center gap-4 mb-6'>
-						<div className='w-12 h-px bg-zinc-400 dark:bg-zinc-600' />
-						<span className='text-sm uppercase tracking-widest'>Selected Work</span>
-					</div>
 					<h2 className='text-4xl md:text-5xl font-bold tracking-tighter'>Projects</h2>
 				</motion.div>
 
