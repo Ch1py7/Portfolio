@@ -57,7 +57,7 @@ export const Presentation: React.FC<PresentationProps> = ({
 						</p>
 						<div className='flex flex-wrap gap-4'>
 							<motion.button
-								onClick={() => scrollToSection('work')}
+								onClick={() => scrollToSection('experience')}
 								className='group relative px-4 py-2 md:px-8 md:py-4 overflow-hidden cursor-pointer rounded-2xl'
 								whileHover={{ scale: 1.02 }}
 							>
