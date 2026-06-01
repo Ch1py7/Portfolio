@@ -5,7 +5,7 @@ export const experience = [
 		position: 'Technical Lead',
 		startDate: '2025-09',
 		endDate: 'Present',
-		technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'MongoDB', 'AI Agents'],
+		technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js'],
 		location: 'Remote',
 		country: 'Spain',
 		resume:
