@@ -12,6 +12,7 @@
 		"lint:check": "biome check .",
 		"format:check": "biome format ."
 	},
+	"packageManager": "pnpm@11.2.2",
 	"dependencies": {
 		"@tailwindcss/vite": "^4.3.0",
 		"framer-motion": "^12.40.0",
