@@ -23,7 +23,7 @@ export const experience = [
 		position: 'Software Engineer',
 		startDate: '2025-07',
 		endDate: '2025-09',
-		technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Machine Learning', 'TradingView API'],
+		technologies: ['React', 'TypeScript', 'Tailwind CSS', 'TradingView API'],
 		location: 'Remote',
 		country: 'Dubai',
 		resume:
@@ -40,7 +40,7 @@ export const experience = [
 		position: 'Front End Developer',
 		startDate: '2024-10',
 		endDate: '2025-05',
-		technologies: ['React', 'TypeScript', '.NET', 'Tailwind CSS'],
+		technologies: ['React', 'TypeScript', 'Tailwind CSS'],
 		location: 'Remote',
 		country: 'Colombia',
 		resume:
