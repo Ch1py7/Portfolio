@@ -62,11 +62,11 @@ export const Work: React.FC<WorkProps> = ({ handleSection }): React.ReactNode =>
 											)}
 										</div>
 										{role.technologies && (
-											<div className='flex flex-wrap gap-2 pt-1'>
+											<div className='flex flex-wrap gap-x-4 gap-y-2 pt-1'>
 												{role.technologies.map((tech) => (
 													<span
 														key={tech}
-														className='px-2.5 py-1 text-[11px] uppercase tracking-[0.2em] bg-white/60 dark:bg-zinc-800/70 border border-white/50 dark:border-zinc-700/50 rounded-full text-zinc-600 dark:text-zinc-300'
+														className='text-[11px] uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400 transition-colors hover:text-zinc-900 dark:hover:text-zinc-200'
 													>
 														{tech}
 													</span>

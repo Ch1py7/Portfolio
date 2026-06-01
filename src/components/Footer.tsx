@@ -14,22 +14,25 @@ export const Footer: React.FC = (): React.ReactNode => {
 							target='_blank'
 							rel='noopener noreferrer'
 							className='opacity-60 hover:text-indigo-500 transition-colors'
+							aria-label='GitHub profile'
 						>
-							<Github className='w-5 h-5' />
+							<Github className='w-5 h-5' aria-hidden='true' />
 						</a>
 						<a
 							href='https://www.linkedin.com/in/gerardo-bulbsum/'
 							target='_blank'
 							rel='noopener noreferrer'
 							className='opacity-60 hover:text-indigo-500 transition-colors'
+							aria-label='LinkedIn profile'
 						>
-							<Linkedin className='w-5 h-5' />
+							<Linkedin className='w-5 h-5' aria-hidden='true' />
 						</a>
 						<a
 							href='mailto:garcialopezgerardo6612@gmail.com'
 							className='opacity-60 hover:text-indigo-500 transition-colors'
+							aria-label='Send email'
 						>
-							<Mail className='w-5 h-5' />
+							<Mail className='w-5 h-5' aria-hidden='true' />
 						</a>
 					</div>
 				</div>

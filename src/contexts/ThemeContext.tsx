@@ -35,6 +35,13 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 		setWillBeDark(newIsDark)
 		setIsDark(newIsDark)
 		localStorage.setItem('theme', newIsDark ? 'dark' : 'light')
+
+		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+		if (prefersReducedMotion) {
+			document.documentElement.classList.toggle('dark', newIsDark)
+			return
+		}
+
 		setCircleCoordinates({ x, y })
 		setIsAnimating(true)
 

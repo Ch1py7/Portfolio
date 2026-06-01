@@ -39,28 +39,9 @@ export const Projects: React.FC<ProjectsProps> = ({ handleSection }): React.Reac
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true, margin: '-100px' }}
 							transition={{ duration: 0.5, delay: index * 0.1 }}
-							className={`grid md:grid-cols-2 gap-8 items-center ${
-								index % 2 === 1 ? 'md:grid-flow-dense' : ''
-							}`}
+							className='grid md:grid-cols-2 gap-8 items-center'
 						>
-							<div className={`${index % 2 === 1 ? 'md:col-start-1' : ''} block md:hidden`}>
-								<motion.div
-									whileHover={{ scale: 1.03, rotate: 1 }}
-									className='relative aspect-4/3 overflow-hidden rounded-2xl shadow-lg'
-								>
-									<a href={project.url} target='_blank' rel='noopener noreferrer'>
-										<div
-											className={`absolute inset-0 bg-linear-to-br ${colors[index]} opacity-15 rounded-2xl`}
-										/>
-										<img
-											src={project.image}
-											alt={project.name}
-											className='w-full relative h-full object-contain rounded-2xl'
-										/>
-									</a>
-								</motion.div>
-							</div>
-							<div className={index % 2 === 1 ? 'md:col-start-2' : ''}>
+							<div className={index % 2 === 1 ? 'md:order-2' : 'md:order-1'}>
 								<h3 className='text-3xl font-bold mb-4 tracking-tight'>
 									{firstLetterCapitalize(project.name)}
 								</h3>
@@ -99,7 +80,7 @@ export const Projects: React.FC<ProjectsProps> = ({ handleSection }): React.Reac
 								</div>
 							</div>
 
-							<div className={`${index % 2 === 1 ? 'md:col-start-1' : ''} hidden md:block`}>
+							<div className={`order-first ${index % 2 === 1 ? 'md:order-1' : 'md:order-2'}`}>
 								<motion.div
 									whileHover={{ scale: 1.03, rotate: 1 }}
 									className='relative aspect-4/3 overflow-hidden rounded-2xl shadow-lg'
@@ -111,6 +92,8 @@ export const Projects: React.FC<ProjectsProps> = ({ handleSection }): React.Reac
 										<img
 											src={project.image}
 											alt={project.name}
+											loading='lazy'
+											decoding='async'
 											className='w-full relative h-full object-contain rounded-2xl'
 										/>
 									</a>

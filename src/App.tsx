@@ -1,3 +1,4 @@
+import { MotionConfig } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import { AboutMe } from './components/AboutMe'
 import { Contact } from './components/Contact'
@@ -117,7 +118,9 @@ const CanvasAnimation = () => {
 		}
 	}, [circleCoordinates, isAnimating, willBeDark, isDark])
 
-	return <canvas ref={canvasRef} className='fixed inset-0 pointer-events-none z-0' />
+	return (
+		<canvas ref={canvasRef} className='fixed inset-0 pointer-events-none z-0' aria-hidden/>
+	)
 }
 
 export const App: React.FC = (): React.ReactNode => {
@@ -135,20 +138,41 @@ export const App: React.FC = (): React.ReactNode => {
 		setActiveSection(section)
 	}
 
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) {
+					if (entry.isIntersecting) {
+						setActiveSection(entry.target.id)
+					}
+				}
+			},
+			{ rootMargin: '-40% 0px -55% 0px' }
+		)
+
+		for (const el of sectionRefs.current) {
+			if (el) observer.observe(el)
+		}
+
+		return () => observer.disconnect()
+	}, [])
+
 	return (
 		<ThemeProvider>
-			<div className='relative min-h-screen font-[Satoshi] overflow-x-hidden text-gray-700 dark:text-gray-200'>
-				<CanvasAnimation />
-				<div className='relative z-10'>
-					<Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
-					<Presentation handleSection={handleSection} scrollToSection={scrollToSection} />
-					<Work handleSection={handleSection} />
-					<Projects handleSection={handleSection} />
-					<AboutMe handleSection={handleSection} />
-					<Contact handleSection={handleSection} />
-					<Footer />
+			<MotionConfig reducedMotion='user'>
+				<div className='relative min-h-screen font-[Satoshi] overflow-x-hidden text-gray-700 dark:text-gray-200'>
+					<CanvasAnimation />
+					<div className='relative z-10'>
+						<Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
+						<Presentation handleSection={handleSection} scrollToSection={scrollToSection} />
+						<Work handleSection={handleSection} />
+						<Projects handleSection={handleSection} />
+						<AboutMe handleSection={handleSection} />
+						<Contact handleSection={handleSection} />
+						<Footer />
+					</div>
 				</div>
-			</div>
+			</MotionConfig>
 		</ThemeProvider>
 	)
 }

@@ -30,6 +30,8 @@ export const AboutMe: React.FC<AboutMeProps> = ({ handleSection }): React.ReactN
 								<img
 									src='/images/me.webp'
 									alt='Gerardo Garcia'
+									loading='lazy'
+									decoding='async'
 									className='w-full h-full object-cover'
 								/>
 							</div>
