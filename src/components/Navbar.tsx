@@ -66,8 +66,13 @@ export const Navbar: React.FC<NavbarProps> = ({
 							className='p-2 hover:bg-zinc-200 dark:hover:bg-zinc-800 rounded-full transition-colors'
 							whileHover={{ scale: 1.1 }}
 							whileTap={{ scale: 0.9 }}
+							aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
 						>
-							{isDark ? <Sun className='w-5 h-5' /> : <Moon className='w-5 h-5' />}
+							{isDark ? (
+								<Sun className='w-5 h-5' aria-hidden='true' />
+							) : (
+								<Moon className='w-5 h-5' aria-hidden='true' />
+							)}
 						</motion.button>
 					</div>
 
@@ -81,15 +86,27 @@ export const Navbar: React.FC<NavbarProps> = ({
 							}}
 							className='p-2'
 							whileTap={{ scale: 0.9 }}
+							aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
 						>
-							{isDark ? <Sun className='w-5 h-5' /> : <Moon className='w-5 h-5' />}
+							{isDark ? (
+								<Sun className='w-5 h-5' aria-hidden='true' />
+							) : (
+								<Moon className='w-5 h-5' aria-hidden='true' />
+							)}
 						</motion.button>
 						<motion.button
 							onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
 							className=''
 							whileTap={{ scale: 0.9 }}
+							aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+							aria-expanded={mobileMenuOpen}
+							aria-controls='mobile-menu'
 						>
-							{mobileMenuOpen ? <X className='w-6 h-6' /> : <Menu className='w-6 h-6' />}
+							{mobileMenuOpen ? (
+								<X className='w-6 h-6' aria-hidden='true' />
+							) : (
+								<Menu className='w-6 h-6' aria-hidden='true' />
+							)}
 						</motion.button>
 					</div>
 				</div>
@@ -97,6 +114,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 			<AnimatePresence>
 				{mobileMenuOpen && (
 					<motion.div
+						id='mobile-menu'
 						initial={{ opacity: 0, y: -20 }}
 						animate={{ opacity: 1, y: 0 }}
 						exit={{ opacity: 0, y: -20 }}

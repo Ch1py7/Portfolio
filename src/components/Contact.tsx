@@ -81,8 +81,9 @@ export const Contact: React.FC<ContactProps> = ({ handleSection }): React.ReactN
 									rel='noopener noreferrer'
 									className='opacity-70 hover:text-indigo-500 transition-colors'
 									whileHover={{ scale: 1.1 }}
+									aria-label='GitHub profile'
 								>
-									<Github className='w-8 h-8' />
+									<Github className='w-8 h-8' aria-hidden='true' />
 								</motion.a>
 								<motion.a
 									href='https://www.linkedin.com/in/gerardo-bulbsum/'
@@ -90,8 +91,9 @@ export const Contact: React.FC<ContactProps> = ({ handleSection }): React.ReactN
 									rel='noopener noreferrer'
 									className='opacity-70 hover:text-indigo-500 transition-colors'
 									whileHover={{ scale: 1.1 }}
+									aria-label='LinkedIn profile'
 								>
-									<Linkedin className='w-8 h-8' />
+									<Linkedin className='w-8 h-8' aria-hidden='true' />
 								</motion.a>
 							</div>
 						</div>
